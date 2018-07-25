@@ -1,0 +1,11 @@
+#signUpForm{
+	width: 55%;
+	margin-top: 40px;
+	margin-left: 27%;
+}
+
+#signUpSubmit{
+	margin-left: 43%;
+	color: #fff;
+	background-color: #0A9211; 
+}
