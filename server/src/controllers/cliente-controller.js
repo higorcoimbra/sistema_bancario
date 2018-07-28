@@ -3,7 +3,6 @@ const Cliente = mongoose.model('Cliente');
 const Conta = mongoose.model('Conta');
 
 exports.post = (req, res, next) => {
-	console.log(req.body);
 	var cliente = new Cliente();
 	var conta = new Conta();
 	cliente.nome = req.body.nome;
