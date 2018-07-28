@@ -4,7 +4,7 @@ const http = require('http');
 const debug = require('debug')('nodestr:server');
 
 //configuração de porta para o app
-const port = 5000;
+const port = 3001;
 app.set('port', port);
 
 const server = http.createServer(app);

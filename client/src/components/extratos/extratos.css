@@ -1,0 +1,26 @@
+#dayButton{
+	margin-top: 10px;
+	background-color: #5F8CFE; 
+	color: #fff;
+}
+
+#extratoForm{
+  width: 55%;
+  margin-top: 40px;
+  margin-left: 27%;
+}
+
+#extratoSubmit{
+  margin-left: 43%;
+  color: #fff;
+  background-color: #0A9211; 
+}
+
+#tabelaExtratos{
+  height: 300px;
+  overflow: auto;
+}
+
+.col, .head{
+  text-align: center;
+}

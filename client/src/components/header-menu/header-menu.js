@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './header-menu.css';
 import * as ReactBootstrap from 'react-bootstrap';
+import {NavLink} from "react-router-dom";
 
 class HeaderMenu extends Component {
   render() {
@@ -14,16 +15,24 @@ class HeaderMenu extends Component {
 		  </ReactBootstrap.Navbar.Header>
 		  <ReactBootstrap.Nav>
 		    <ReactBootstrap.NavItem eventKey={1} href="#">
-		      Cadastro
+		   	  <NavLink to="/">
+		      	Cadastro
+		      </NavLink>
 		    </ReactBootstrap.NavItem>
 		    <ReactBootstrap.NavItem eventKey={2} href="#">
-		      Extratos
+		      <NavLink to="/extratos">
+		      	Extratos
+		      </NavLink>	
 		    </ReactBootstrap.NavItem>
 		    <ReactBootstrap.NavItem eventKey={2} href="#">
-		      Relatórios
+		      <NavLink to="/relatorios">
+		      	Relatórios
+		      </NavLink>	
 		    </ReactBootstrap.NavItem>
 		    <ReactBootstrap.NavItem eventKey={2} href="#">
-		      Saldos
+		      <NavLink to="/saldos">
+		      	Saldos
+		      </NavLink>	
 		    </ReactBootstrap.NavItem>
 		  </ReactBootstrap.Nav>
 	   </ReactBootstrap.Navbar>
