@@ -17,7 +17,6 @@ exports.post = (req, res, next) => {
 	 	 	    	data:err 
 	 	 		});
 	 	 	}else{
-	 	 		//se foi possível criar o cliente, cria a conta associada
 	 	 		conta.nconta = req.body.nconta;
 	 	 		conta.saldo = 0;
 	 	 		conta.save((err) => {

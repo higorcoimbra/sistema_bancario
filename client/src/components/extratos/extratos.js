@@ -19,6 +19,8 @@ class Extratos extends Component {
     this.retrieveTransactions = this.retrieveTransactions.bind(this);
   }
 
+
+  //processa a entrada dada por um campo em um formulário
   handleInputChange(event) {
       const target = event.target;
       const value = target.value;
@@ -29,6 +31,7 @@ class Extratos extends Component {
       });
   }
 
+  //processa a resposta dada pelo servidor, quando requisitado a enviar as transações de um cliente
   handleTransactionsResponse(message, transactions, cliente, saldo_atual){
     if(message === "Não há cliente associado à essa conta"){
       this.setState({
@@ -59,6 +62,7 @@ class Extratos extends Component {
     }
   }
 
+  //exibe uma mensagem de erro logo acima da parte principal da componente
   renderErrorMessage(){
     if(this.state.show === true){
       return <ReactBootstrap.Alert bsStyle="danger">{this.state.message}</ReactBootstrap.Alert>;
@@ -66,6 +70,7 @@ class Extratos extends Component {
     return null;
   }
 
+  //acessa o servidor por meio de requisição POST para recuperar as transações realizadas por um cliente
   retrieveTransactions(){
     fetch('/transactions',{
       method: 'post',
@@ -77,6 +82,7 @@ class Extratos extends Component {
       })
   }
 
+  //validação do campo de número da conta do formulário presente na componente.
   validateAccountNumber() {
       const accNumber = this.state.nconta;
       if(accNumber.length === 5 && !Number.isNaN(parseInt(accNumber, 10))) return 'success';

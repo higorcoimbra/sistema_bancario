@@ -10,13 +10,16 @@ class SignUpForm extends Component {
 	      nome: '',
 	      idade: 0,
 	      endereco: '',
-	      nconta: ''
+	      nconta: '',
+	      showSucess: false,
+	      showError: false
 	    };
 
 	    this.handleInputChange = this.handleInputChange.bind(this);
 	    this.recordData = this.recordData.bind(this);
 	}
 
+	//processa a entrada dada por um campo em um formulário
 	handleInputChange(event) {
 	    const target = event.target;
 	    const value = target.value;
@@ -27,6 +30,7 @@ class SignUpForm extends Component {
 	    });
   	}
 
+  	//validação do campo de número da conta do formulário presente na componente.
 	validateAccountNumber() {
 	    const accNumber = this.state.nconta;
 	    if(accNumber.length === 5 && !Number.isNaN(parseInt(accNumber, 10))) return 'success';
@@ -34,13 +38,46 @@ class SignUpForm extends Component {
 	}
 
 	recordData(){
-		alert(JSON.stringify(this.state));
-		fetch('http://localhost:3001');
+		fetch('/',{
+			method: 'POST',
+			headers:{
+				'Content-type': 'application/json'
+			},
+			body: JSON.stringify(this.state)
+		}).then(function(res){
+			if(res.status === 201){
+				this.setState({showSucess: true, showError: false});
+			}else{
+				this.setState({showError: true, showSucess:false});
+			}
+		});
 	}
+
+	//exibe uma mensagem de erro no cadastro do cliente logo acima da parte principal da componente
+  	renderErrorMessage(){
+    	if(this.state.showError === true){
+	      return <ReactBootstrap.Alert bsStyle="danger">Erro ao cadastrar cliente</ReactBootstrap.Alert>;
+	    }
+	    return null;
+	}
+
+	//exibe uma mensagem de sucesso do cadastro do cliente logo acima da parte principal da componente
+	renderSuccessMessage(){
+	    if(this.state.showSuccess === true){
+	      return <ReactBootstrap.Alert bsStyle="success">Cliente cadastrado com sucesso</ReactBootstrap.Alert>;
+	    }
+	    return null;
+	  }
 
 	render(){
 		return(
 			<ReactBootstrap.Row>
+				<div>
+	              {this.renderSuccessMessage()} 
+	            </div>
+	            <div>
+	              {this.renderErrorMessage()} 
+	            </div>
 				<h2 align="center">Cadastro de Cliente</h2>
 				<ReactBootstrap.Form horizontal id="signUpForm" onSubmit={this.recordData}>
 				  <ReactBootstrap.FormGroup>

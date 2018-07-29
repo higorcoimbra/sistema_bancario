@@ -14,6 +14,7 @@ class Relatorios extends Component {
     this.handleTransactionsResponse = this.handleTransactionsResponse.bind(this);
   }
 
+  //resgata do servidor todas as transações realizadas no dia atual no momento em que o componente é montado.
   componentDidMount(){
     var state = this.state;
     state.date = "true"; 
@@ -25,6 +26,7 @@ class Relatorios extends Component {
       });
   }
 
+  //processa a entrada dada por um campo em um formulário
   handleInputChange(event) {
       const target = event.target;
       const value = target.value;
@@ -35,6 +37,7 @@ class Relatorios extends Component {
       });
   }
 
+  //processa a resposta dada pelo servidor, quando requisitado a todas as transações realizadas no dia atual
   handleTransactionsResponse(transactions){
     if(transactions.length === 0){
     	this.setState({
@@ -51,6 +54,7 @@ class Relatorios extends Component {
     }
   }
 
+  //exibe uma mensagem de erro logo acima da parte principal da componente
   renderErrorMessage(){
     if(this.state.show === true){
       return <ReactBootstrap.Alert bsStyle="danger">{this.state.message}</ReactBootstrap.Alert>;

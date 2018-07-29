@@ -5,6 +5,26 @@
 * Autor: Higor Coimbra Amorim
 * Data limite de entrega: 30/07/2018
 
+# Execução
+
+Vá ao diretório raiz do projeto.
+
+Abra dois terminais, no primeiro, instale os módulos e execute o cliente com:
+
+```sh
+npm install
+cd client
+npm start
+```
+
+No segundo instale os módulos e execute o servidor com:
+
+```sh
+npm install
+cd server/bin
+nodemon server.js
+```
+
 # Características gerais
 
 * Ambiente de desenvolvimento: **Linux**.

@@ -10,6 +10,7 @@ class Saldos extends Component{
 		}
 	}
 
+	//resgata do servidor as informações de saldo e cliente para todos os clientes do banco de dados assim que o componente é montado
 	componentDidMount(){
 		fetch("/contas")
 			.then(function(res){
