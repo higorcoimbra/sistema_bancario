@@ -38,7 +38,11 @@ O software foi desenvolvido utilizando o sistema operacional **Ubuntu 15.10**, e
 
 # Front-end
 
-O front-end da aplicação foi desenvolvido utilizando o framework **React JS**. Tal framework permite a criação de **componentes JavaScript** em que se podem inserir a renderização de **elementos HTML**. As componentes mais relevantes do software desenvolvido foram:
+ A estrutura do projeto foi criado com o módulo npm **create-react-app** que define arquivos básicos inicias de configuração e uma componente inicial para o desenvolvimento adequado e organizado usando o React JS.
+
+O front-end da aplicação foi desenvolvido utilizando o framework **React JS**. Tal framework permite a criação de **componentes JavaScript** em que se podem inserir a renderização de **elementos HTML**.
+
+ As componentes mais relevantes do software desenvolvido foram:
 
 ### *Signup Form**
 
